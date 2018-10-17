@@ -14,9 +14,13 @@ After adding the plugin, the file structure will be the below.
 
 ```
 src/
-├── pages/
-├── layouts/
-└── router.js
+├── modules/
+├─────xxxxx(every multipage module)
+├─────── pages/
+├─────── layouts/
+├─────── router/
+├────────── index.js
+└────────── routes.js(auto generate)
 ```
 
 ### Pages
@@ -43,17 +47,17 @@ export default [
   {
     name: 'index',
     path: '/',
-    component: () => import('@/pages/index.vue')
+    component: () => import('src/modules/xxx/pages/index.vue')
   },
   {
     name: 'users',
     path: '/users',
-    component: () => import('@/pages/users.vue'),
+    component: () => import('src/modules/xxx/pages/users.vue'),
     children: [
       {
         name: 'users-id',
         path: ':id?',
-        component: () => import('@/pages/users/_id.vue')
+        component: () => import('src/modules/xxx/pages/users/_id.vue')
       }
     ]
   }
@@ -87,7 +91,7 @@ module.exports = [
   {
     name: 'index',
     path: '/',
-    component: () => import('@/pages/index.vue'),
+    component: () => import('src/modules/xxx/pages/index.vue'),
     meta: {
       requiresAuth: true
     }
@@ -135,9 +139,8 @@ The following html will be rendered:
 ```
 
 ## Related Projects
-
+* [vue-macula-auto-routing](https://github.com/macula-projects/vue-macula-auto-routing): Generate Vue Router routing  for multipages automatically.
 * [vue-router-layout](https://github.com/ktsn/vue-router-layout): Lightweight layout resolver for Vue Router.
-* [vue-auto-routing](https://github.com/ktsn/vue-auto-routing): Generate Vue Router routing automatically.
 * [vue-route-generator](https://github.com/ktsn/vue-route-generator): Low-level utility generating routing (used by vue-auto-routing under the hood).
 
 ## License
