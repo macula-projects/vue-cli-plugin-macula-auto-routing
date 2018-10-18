@@ -1,13 +1,13 @@
-const VueAutoRoutingPlugin = require('vue-auto-routing/lib/webpack-plugin')
+const VueMaculaAutoRoutingPlugin = require('vue-macula-auto-routing/lib/webpack-plugin')
 
 module.exports = api => {
   api.chainWebpack(webpackConfig => {
     // prettier-ignore
     webpackConfig
-      .plugin('vue-auto-routing')
-        .use(VueAutoRoutingPlugin, [
+      .plugin('vue-macula-auto-routing')
+        .use(VueMaculaAutoRoutingPlugin, [
           {
-            pages: 'src/pages',
+            pages: 'src/modules',
             nested: true
           }
         ])

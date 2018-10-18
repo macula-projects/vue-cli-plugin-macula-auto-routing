@@ -4,7 +4,7 @@ module.exports = api => {
       'vue-router-layout': '^0.1.2'
     },
     devDependencies: {
-      'vue-auto-routing': '^0.3.0'
+      'vue-macula-auto-routing': '^0.3.1'
     }
   })
 
@@ -21,7 +21,7 @@ module.exports = api => {
 
     if (api.hasPlugin('typescript')) {
       api.postProcessFiles(files => {
-        delete files['src/router.ts']
+        delete files['src/router.ts', 'src/main.js', 'src/App.vue']
       })
 
       const convertFiles = require('@vue/cli-plugin-typescript/generator/convert')
