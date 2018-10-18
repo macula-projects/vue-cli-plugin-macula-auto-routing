@@ -1,4 +1,4 @@
-# vue-cli-plugin-auto-routing
+# vue-cli-plugin-macula-auto-routing
 
 Vue CLI plugin that provides auto routing feature.
 
@@ -15,8 +15,8 @@ After adding the plugin, the file structure will be the below.
 ```
 src/
 ├── modules/
-├─────xxxxx(every multipage module)
-├─────── pages/
+├─────index(every multipage module)
+├─────── views/
 ├─────── layouts/
 ├─────── router/
 ├────────── index.js
@@ -25,14 +25,14 @@ src/
 
 ### Pages
 
-`.vue` files under the `pages/` directory will be automatically resolved to generate routing. Vue Router `routes` options will be configured with the file structure under the `pages/`. The generated routing is same with [Nuxt's routing](https://nuxtjs.org/guide/routing).
+`.vue` files under the `views/` directory will be automatically resolved to generate routing. Vue Router `routes` options will be configured with the file structure under the `views/`. The generated routing is same with [Nuxt's routing](https://nuxtjs.org/guide/routing).
 
 Note that directories and files started and ended with `__` (two underscores, e.g. `__foo__.vue`) will be ignored.
 
 For example, when you have the following page components:
 
 ```
-pages/
+views/
 ├── __partial__.vue
 ├── index.vue
 ├── users.vue
@@ -47,17 +47,17 @@ export default [
   {
     name: 'index',
     path: '/',
-    component: () => import('src/modules/xxx/pages/index.vue')
+    component: () => import('src/modules/xxx/views/index.vue')
   },
   {
     name: 'users',
     path: '/users',
-    component: () => import('src/modules/xxx/pages/users.vue'),
+    component: () => import('src/modules/xxx/views/users.vue'),
     children: [
       {
         name: 'users-id',
         path: ':id?',
-        component: () => import('src/modules/xxx/pages/users/_id.vue')
+        component: () => import('src/modules/xxx/views/users/_id.vue')
       }
     ]
   }
@@ -91,7 +91,7 @@ module.exports = [
   {
     name: 'index',
     path: '/',
-    component: () => import('src/modules/xxx/pages/index.vue'),
+    component: () => import('src/modules/xxx/views/index.vue'),
     meta: {
       requiresAuth: true
     }
@@ -103,7 +103,7 @@ module.exports = [
 
 Components under the `layouts/` directory will be used as shared layout component in the application. You can choose a layout by specifying `layout` component option in a page component. The default value of `layout` is `'default'`. That means when you omit `layout` options, `layouts/default.vue` will be choosed as the layout component. This is the same concept with [Nuxt's layouts](https://nuxtjs.org/guide/views#layouts).
 
-For example, when you have `layouts/foo.vue` and `pages/index.vue`:
+For example, when you have `layouts/foo.vue` and `views/index.vue`:
 
 ```vue
 <!-- layouts/foo.vue -->
@@ -141,7 +141,7 @@ The following html will be rendered:
 ## Related Projects
 * [vue-macula-auto-routing](https://github.com/macula-projects/vue-macula-auto-routing): Generate Vue Router routing  for multipages automatically.
 * [vue-router-layout](https://github.com/ktsn/vue-router-layout): Lightweight layout resolver for Vue Router.
-* [vue-route-generator](https://github.com/ktsn/vue-route-generator): Low-level utility generating routing (used by vue-auto-routing under the hood).
+* [vue-route-generator](https://github.com/ktsn/vue-route-generator): Low-level utility generating routing (used by vue-macula-auto-routing under the hood).
 
 ## License
 

@@ -13,7 +13,7 @@ module.exports = api => {
   if (api.invoking) {
     api.postProcessFiles(files => {
       Object.keys(files).forEach(name => {
-        if (/^src\/views[/$]/.test(name)) {
+        if (/^src\/modules[/$]/.test(name)) {
           delete files[name]
         }
       })
@@ -21,7 +21,9 @@ module.exports = api => {
 
     if (api.hasPlugin('typescript')) {
       api.postProcessFiles(files => {
-        delete files['src/router.ts', 'src/main.js', 'src/App.vue']
+        delete files['src/router.ts']
+        delete files['src/main.js']
+        delete files['src/App.vue']
       })
 
       const convertFiles = require('@vue/cli-plugin-typescript/generator/convert')
