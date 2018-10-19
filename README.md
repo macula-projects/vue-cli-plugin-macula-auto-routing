@@ -141,7 +141,7 @@ The following html will be rendered:
 ## Related Projects
 * [vue-macula-auto-routing](https://github.com/macula-projects/vue-macula-auto-routing): Generate Vue Router routing  for multipages automatically.
 * [vue-router-layout](https://github.com/ktsn/vue-router-layout): Lightweight layout resolver for Vue Router.
-* [vue-route-generator](https://github.com/ktsn/vue-route-generator): Low-level utility generating routing (used by vue-macula-auto-routing under the hood).
+* [vue-macula-route-generator](https://github.com/macula-projects/vue-macula-route-generator): Low-level utility generating routing (used by vue-macula-auto-routing under the hood).
 
 ## License
 

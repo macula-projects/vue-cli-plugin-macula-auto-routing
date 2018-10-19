@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import routes from 'vue-macula-auto-routing'
+import routes from './routes'
 import { createRouterLayout } from 'vue-router-layout'
 
 Vue.use(Router)
