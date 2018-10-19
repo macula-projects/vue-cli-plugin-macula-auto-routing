@@ -1,4 +1,4 @@
-# vue-cli-plugin-macula-auto-routing
+# vue-cli-plugin-macula-auto-routing(forked from ktsn/vue-cli-plugin-auto-routing)
 
 Vue CLI plugin that provides auto routing feature for multi pages.
 
