@@ -2,6 +2,7 @@ module.exports = api => {
   api.extendPackage({
     dependencies: {
       'vue-router': '^3.0.1',
+      'vuex': '^3.0.1',
       'vue-router-layout': '^0.1.2'
     },
     devDependencies: {
@@ -18,7 +19,7 @@ module.exports = api => {
           delete files[name]
         }
         console.log('========' + name)
-        if (/^src\/(main.js|router.js|App.vue)/.test(name)) {
+        if (/^src\/(main.js|router.js|store.js|App.vue)/.test(name)) {
           delete files[name]
         }
       })
