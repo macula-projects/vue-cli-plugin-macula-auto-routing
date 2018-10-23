@@ -6,7 +6,7 @@ module.exports = api => {
       'vue-router-layout': '^0.1.2'
     },
     devDependencies: {
-      'vue-macula-auto-routing': '^0.3.4'
+      'vue-macula-auto-routing': '^0.3.5'
     }
   })
 
