@@ -9,7 +9,7 @@ module.exports = api => {
       "mockjs": "^1.0.1-beta3"
     },
     devDependencies: {
-      'vue-macula-auto-routing': '^0.3.5'
+      'vue-macula-auto-routing': '^0.3.6'
     },
     scripts: {
       "serve": "vue-cli-service serve",
